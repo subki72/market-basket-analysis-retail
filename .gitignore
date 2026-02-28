@@ -1,0 +1,16 @@
+# Dataset
+*.xlsx
+*.xls
+Online Retail Data.csv
+
+# Jupyter Notebook & Python environments
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+.env
+env/
+mba_project/
+
+# OS generated files
+.DS_Store
+Thumbs.db
