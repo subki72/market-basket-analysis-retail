@@ -1,16 +1,41 @@
-# Dataset
+# Datasets (raw retail dumps kept local)
 *.xlsx
 *.xls
 Online Retail Data.csv
 
+# Environment & Secrets (Check 4.1)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.cert
+id_rsa
+secrets/
+
 # Jupyter Notebook & Python environments
 .ipynb_checkpoints/
 __pycache__/
-*.pyc
-.env
+*.py[cod]
+*$py.class
+.venv/
+venv/
 env/
 mba_project/
 
-# OS generated files
+# Tooling caches, test coverage & artifacts
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
+outputs/
+
+# OS & IDE files
 .DS_Store
 Thumbs.db
+.vscode/
+.idea/
