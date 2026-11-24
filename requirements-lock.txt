@@ -82,7 +82,7 @@ pydantic==2.10.4
     # via
     #   -r requirements.txt
     #   fastapi
-pydantic-core==2.27.2
+pydantic-core==2.50.5
     # via pydantic
 pyparsing==3.3.3
     # via matplotlib
