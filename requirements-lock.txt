@@ -96,7 +96,7 @@ python-dateutil==4.0.0
     # via
     #   matplotlib
     #   pandas
-python-dotenv==1.0.1
+python-dotenv==1.2.4
     # via -r requirements.txt
 pytz==2026.6
     # via pandas
