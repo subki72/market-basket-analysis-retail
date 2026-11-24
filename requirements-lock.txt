@@ -51,7 +51,7 @@ matplotlib==3.9.2
     #   -r requirements.txt
     #   mlxtend
     #   seaborn
-mlxtend==0.23.3
+mlxtend==0.25.0
     # via -r requirements.txt
 narwhals==2.29.0
     # via scikit-learn
