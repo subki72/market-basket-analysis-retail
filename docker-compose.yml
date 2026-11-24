@@ -1,0 +1,25 @@
+services:
+  mba-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: market-basket-analysis-api
+    ports:
+      - "8000:8000"
+    environment:
+      MBA_MIN_SUPPORT: ${MBA_MIN_SUPPORT:-0.02}
+      MBA_MIN_CONFIDENCE: ${MBA_MIN_CONFIDENCE:-0.30}
+      MBA_MIN_LIFT: ${MBA_MIN_LIFT:-1.0}
+      MBA_MAX_LEN: ${MBA_MAX_LEN:-3}
+      MBA_MAX_ITEMS: ${MBA_MAX_ITEMS:-500}
+      MBA_DEFAULT_RULES_PATH: ${MBA_DEFAULT_RULES_PATH:-MBA_Results_TopRules.csv}
+      MBA_ALLOWED_ORIGINS: ${MBA_ALLOWED_ORIGINS:-http://localhost:3000,http://127.0.0.1:8000}
+      MBA_LOG_LEVEL: ${MBA_LOG_LEVEL:-INFO}
+      MBA_RATE_LIMIT_PER_MINUTE: ${MBA_RATE_LIMIT_PER_MINUTE:-60}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=3)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    restart: unless-stopped
